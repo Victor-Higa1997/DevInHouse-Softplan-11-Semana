@@ -15,16 +15,12 @@ export const Div = styled.div`
 `
 export const Button = styled.button`
     border: none;
-    background-color: gray;
+    background-color: ${props => props.seguindo? props.theme.seguir.background : props.theme.desseguir.background};
     border-radius: 0.2rem;
-    color: black;
+    color: ${props => props.seguindo? props.theme.seguir.color : props.theme.desseguir.color};
     margin: 0.2rem;
     height: 2rem;
     width: 5rem;
-    &:hover{
-        background-color: #CDC1C5;
-        color: white;
-    }
 `
 export const Box = styled.div`
     display: flex;

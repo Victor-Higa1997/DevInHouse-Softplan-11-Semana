@@ -1,11 +1,12 @@
 import styled from 'styled-components';
 
+
 export const Nav = styled.nav`
-    background-color: #545444;
+    background-color: ${props => props.dark? props.theme.dark.background:props.theme.light.background };
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: #838B83;
+    color: ${props => props.dark? props.theme.dark.color:props.theme.light.color };
     height: 1rem;
     font-family: Verdana;
     font-size: 2rem;
@@ -19,12 +20,12 @@ export const Button = styled.button`
     height: 2rem;
     width: 8rem;
     font-size: 1rem;
-    background-color: #CDC1C5;
+    background-color: ${props => !props.dark? props.theme.dark.background:props.theme.light.background };
     border-radius: 0.2rem;
-    color: white;
-    &:hover{
-        background-color: gray;
+    color: ${props => !props.dark? props.theme.dark.color:props.theme.light.color };
+    /* &:hover{
+        background-color: brown;
         color: black;
-    }
+    } */
 
 `

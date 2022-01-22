@@ -1,12 +1,14 @@
 import { Button, Nav } from "./Perfil.style"
 
 
-export const Perfil = () => {
+export const Perfil = ({ mudarTema, status }) => {
     return (
 
-        <Nav>My app
-            <Button>
-                Dark
+        <Nav dark={status}>My app
+            
+            <Button dark={status}
+                onClick={mudarTema}>
+                { !status? 'Dark': 'Light' }
             </Button>
         </Nav>
     )
