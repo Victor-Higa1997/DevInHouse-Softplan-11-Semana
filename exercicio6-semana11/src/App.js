@@ -13,6 +13,7 @@ import { Theme } from './components/thema/Theme';
 function App() {
   const data = [{ id: 1, nome: 'Victor Higa', descricao: 'Descrição do Victor Higa', seguindo: false }]
   const [dados, setDados] = useState(data)
+  const [formAberto, setFormAberto] = useState(false)
 
   const [temaDark, setTemaDark] = useState(false)
 
@@ -28,16 +29,23 @@ function App() {
     })
     setDados(dadosNovo)
   }
-    const mudarTema = () => {
-      console.log(temaDark)
-      if(temaDark === false){
-        setTemaDark(true)
-        return temaDark
-      }else{
-        setTemaDark(false)
-        return temaDark
-      }
+
+  const addFormulario = (value) => {
+    dados.push(value)
+    setDados(dados)
+    return console.log(dados)
+  }
+
+  const mudarTema = () => {
+    console.log(temaDark)
+    if (temaDark === false) {
+      setTemaDark(true)
+      return temaDark
+    } else {
+      setTemaDark(false)
+      return temaDark
     }
+  }
 
   return (
     <>
@@ -50,7 +58,7 @@ function App() {
 
       </ThemeProvider> */}
 
-      <Formulario setDados={setDados} dados={dados}/>
+      <Formulario setDados={setDados} dados={dados} addForm={addFormulario} />
     </>
   );
 }

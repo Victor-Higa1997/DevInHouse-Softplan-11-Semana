@@ -10,7 +10,7 @@ export const Formulario = () => {
 
     }
 
-    const schema= Yup.object().shape({
+    const schema = Yup.object().shape({
         nome: Yup.string().required('O campo nome é obrigatório!'),
         email: Yup.string().email().required('E-mail no formato inválido!'),
         endereco: Yup.object().shape({
