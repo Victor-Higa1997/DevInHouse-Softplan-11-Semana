@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import './App.css';
 import { Card } from './components/card';
+import { Formulario } from './components/formulario/Formulario';
 import { Perfil } from './components/perfil';
 import { GlobalStyles } from './components/thema/GlobalStyles';
 import { Theme } from './components/thema/Theme';
@@ -40,14 +41,16 @@ function App() {
 
   return (
     <>
-      <GlobalStyles />
+      {/* <GlobalStyles />
       <ThemeProvider theme={Theme}>
         <Perfil mudarTema={mudarTema} status={temaDark}/>
         {
-          dados.map((item, index) => <Card key={index} func={alterarSeg} item={item} />)
+          dados.map((item, index) => <Card key={index} status={temaDark} func={alterarSeg} item={item} />)
         }
 
-      </ThemeProvider>
+      </ThemeProvider> */}
+
+      <Formulario setDados={setDados} dados={dados}/>
     </>
   );
 }

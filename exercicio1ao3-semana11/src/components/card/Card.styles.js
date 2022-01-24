@@ -11,7 +11,8 @@ export const Div = styled.div`
     padding: 1rem;
     margin-top: 2rem;
     border-radius: 0.3rem;
-    background-color: #E8E8E8;
+    color: ${props => props.dark? props.theme.dark.color:props.theme.light.color };
+    background-color: ${props => props.dark? props.theme.dark.background:props.theme.light.background };
 `
 export const Button = styled.button`
     border: none;
@@ -21,6 +22,7 @@ export const Button = styled.button`
     margin: 0.2rem;
     height: 2rem;
     width: 5rem;
+    border: 0.1rem solid;
 `
 export const Box = styled.div`
     display: flex;
@@ -30,5 +32,17 @@ export const Box = styled.div`
 `
 export const Ini = styled.section`
     display: flex;
+
+`
+export const LogoIniciais = styled.div`
+    border-radius: 50%;
+    background-color: ${props => !props.dark? props.theme.dark.background:props.theme.light.background };
+    color: ${props => !props.dark? props.theme.dark.color:props.theme.light.color };
+    padding: 1rem;
+    border: 0.1rem solid;
+`
+
+export const P = styled.p`
+    color: ${props => props.dark? props.theme.dark.color:props.theme.light.color };
 
 `

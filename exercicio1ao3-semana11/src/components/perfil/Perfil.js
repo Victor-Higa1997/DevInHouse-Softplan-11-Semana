@@ -8,7 +8,7 @@ export const Perfil = ({ mudarTema, status }) => {
             
             <Button dark={status}
                 onClick={mudarTema}>
-                { !status? 'Dark': 'Light' }
+                { status? 'Dark': 'Light' }
             </Button>
         </Nav>
     )

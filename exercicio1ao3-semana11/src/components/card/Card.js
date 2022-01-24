@@ -1,18 +1,18 @@
-import { Box, Button, Div, Ini } from '../card/Card.styles'
+import { Box, Button, Div, Ini, LogoIniciais, P } from '../card/Card.styles'
 
-export const Card = ({ func, item }) => {
+export const Card = ({ func, item, status }) => {
     /*  const [seguir, setSeguir] = useState(false) */
     return (
         <>
             <Box>
-                <Div>
+                <Div dark={status}>
 
                     <Ini>
-                        <p>VH</p>
+                        <LogoIniciais dark={status}>VH</LogoIniciais>
                     </Ini>
                     <div>
-                        <p>{ item.nome }</p>
-                        <p>{ item.descricao }</p>
+                        <P dark={status}>{ item.nome }</P>
+                        <P dark={status}>{ item.descricao }</P>
                     </div>
 
                     <Button seguindo={item.seguindo}
